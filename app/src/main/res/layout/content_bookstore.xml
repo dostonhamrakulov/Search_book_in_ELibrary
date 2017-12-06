@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="Insert ebook"
+        android:onClick="Insert_ebook"
         android:textAllCaps="false"
         android:id="@+id/id_insert_ebook"/>
 </LinearLayout>

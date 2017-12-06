@@ -32,6 +32,7 @@ public class Bookstore extends AppCompatActivity {
     }
     public void Insert_ebook(View view){
         Intent intent = new Intent(Bookstore.this, Inserting_ebook.class);
+        startActivity(intent);
     }
 
 }

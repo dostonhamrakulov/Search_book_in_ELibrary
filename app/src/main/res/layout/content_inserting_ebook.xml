@@ -28,7 +28,7 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/id_book_category"
+            android:id="@+id/id_insert_book_category"
             android:background="@color/color_edit_text"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
@@ -50,7 +50,7 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/id_book_title"
+            android:id="@+id/id_insert_book_title"
             android:background="@color/color_edit_text"
             android:layout_marginLeft="10dp"
             />
@@ -74,7 +74,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/id_book_Author"
+        android:id="@+id/id_insert_book_Author"
         android:background="@color/color_edit_text"
         android:layout_marginLeft="10dp"/>
     </LinearLayout>
@@ -96,7 +96,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/id_book_year"
+        android:id="@+id/id_insert_book_year"
         android:background="@color/color_edit_text"
         android:layout_marginLeft="10dp"/>
     </LinearLayout>
@@ -118,7 +118,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/id_book_pages"
+        android:id="@+id/id_insert_book_pages"
         android:background="@color/color_edit_text"
         android:layout_marginLeft="10dp"/>
     </LinearLayout>
@@ -140,7 +140,7 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/id_book_price"
+            android:id="@+id/id_insert_book_price"
             android:background="@color/color_edit_text"
             android:layout_marginLeft="10dp"
             />
@@ -152,9 +152,19 @@
         android:layout_below="@id/id_linear_6"
         android:layout_marginTop="20dp"
         android:textAllCaps="false"
+        android:id="@+id/id_btn_insert"
         android:text="Insert book"
+        android:onClick="AddBook"
         android:background="@color/color_button"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_btn_insert"
+        android:layout_marginTop="20dp"
+        android:text="Xusan aka"
+        android:textAllCaps="false"
+        android:background="#f90004"/>
 
 </RelativeLayout>
