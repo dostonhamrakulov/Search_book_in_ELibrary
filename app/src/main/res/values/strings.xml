@@ -2,4 +2,6 @@
     <string name="app_name">Search_book_in_E-Library</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_bookstore">Bookstore</string>
+    <string name="welcome">Welcome to online BOOKSTORE</string>
+    <string name="title_activity_inserting_ebook">Inserting_ebook</string>
 </resources>

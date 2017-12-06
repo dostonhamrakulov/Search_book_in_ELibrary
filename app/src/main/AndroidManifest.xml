@@ -22,13 +22,16 @@
         <activity
             android:name=".Bookstore"
             android:label="@string/title_activity_bookstore"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-
         </activity>
+        <activity
+            android:name=".Inserting_ebook"
+            android:label="@string/title_activity_inserting_ebook"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
