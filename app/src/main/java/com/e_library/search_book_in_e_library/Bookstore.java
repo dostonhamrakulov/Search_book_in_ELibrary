@@ -10,12 +10,12 @@ import android.view.View;
 
 public class Bookstore extends AppCompatActivity {
 
-    DatabaseHelper myDB;
+    //DatabaseHelper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookstore);
-        myDB = new DatabaseHelper(this);
+        //myDB = new DatabaseHelper(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

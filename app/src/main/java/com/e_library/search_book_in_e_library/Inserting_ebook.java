@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Inserting_ebook extends AppCompatActivity {
 
     DatabaseHelper myDB;
@@ -23,7 +26,7 @@ public class Inserting_ebook extends AppCompatActivity {
     private int Year;
     private int Pages;
     private int Price;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,29 @@ public class Inserting_ebook extends AppCompatActivity {
         edit_price = (EditText) findViewById(R.id.id_insert_book_price);
 
         btn_insert = (Button) findViewById(R.id.id_btn_insert);
+
+        //A_book book = new A_book();
+        List<A_book> list = new LinkedList<A_book>();
+
+        A_book b1 = new A_book("Technology", "HTML development", "Doston Hamrakulov", 2017, 500, 25, 100, 15);
+        A_book b2 = new A_book("Fiction", "My daily story", "John Adam", 2018, 100, 35, 50, 15);
+        A_book b3 = new A_book("Economic", "Buniss issues", "James Chanies", 2017, 400, 5, 78, 20);
+
+        list.add(b1);
+        list.add(b2);
+        list.add(b3);
+
+        boolean defaultValues = false;
+        for(A_book b : list){
+            defaultValues = myDB.insertDefaultBook(b.getCategory(), b.getTitle(), b.getAuthor(), b.getYear(), b.getPages(), b.getBought(), b.getAvailable(), b.getPrice());
+        }
+
+        if (defaultValues = true){
+            Toast.makeText(Inserting_ebook.this, "Default stored books are added!!!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(Inserting_ebook.this, "Unfortunately NOT added!!!", Toast.LENGTH_LONG).show();
+        }
+
 
 
     }
