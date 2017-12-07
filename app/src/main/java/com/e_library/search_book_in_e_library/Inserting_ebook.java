@@ -1,6 +1,8 @@
 package com.e_library.search_book_in_e_library;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,15 +19,17 @@ import java.util.List;
 public class Inserting_ebook extends AppCompatActivity {
 
     DatabaseHelper myDB;
+    Context context = this;
+    SQLiteDatabase sqLiteDatabase;
 
     private EditText edit_category, edit_author, edit_title, edit_year, edit_price, edit_pages;
     private Button btn_insert;
     private String Category;
     private String Author;
     private String Title;
-    private int Year;
-    private int Pages;
-    private int Price;
+    private String Year;
+    private String Pages;
+    private String Price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,26 +59,26 @@ public class Inserting_ebook extends AppCompatActivity {
         btn_insert = (Button) findViewById(R.id.id_btn_insert);
 
         //A_book book = new A_book();
-        List<A_book> list = new LinkedList<A_book>();
-
-        A_book b1 = new A_book("Technology", "HTML development", "Doston Hamrakulov", 2017, 500, 25, 100, 15);
-        A_book b2 = new A_book("Fiction", "My daily story", "John Adam", 2018, 100, 35, 50, 15);
-        A_book b3 = new A_book("Economic", "Buniss issues", "James Chanies", 2017, 400, 5, 78, 20);
-
-        list.add(b1);
-        list.add(b2);
-        list.add(b3);
-
-        boolean defaultValues = false;
-        for(A_book b : list){
-            defaultValues = myDB.insertDefaultBook(b.getCategory(), b.getTitle(), b.getAuthor(), b.getYear(), b.getPages(), b.getBought(), b.getAvailable(), b.getPrice());
-        }
-
-        if (defaultValues = true){
-            Toast.makeText(Inserting_ebook.this, "Default stored books are added!!!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(Inserting_ebook.this, "Unfortunately NOT added!!!", Toast.LENGTH_LONG).show();
-        }
+//        List<A_book> list = new LinkedList<A_book>();
+//
+//        A_book b1 = new A_book("Technology", "HTML development", "Doston Hamrakulov", 2017, 500, 25, 100, 15);
+//        A_book b2 = new A_book("Fiction", "My daily story", "John Adam", 2018, 100, 35, 50, 15);
+//        A_book b3 = new A_book("Economic", "Buniss issues", "James Chanies", 2017, 400, 5, 78, 20);
+//
+//        list.add(b1);
+//        list.add(b2);
+//        list.add(b3);
+//
+//        boolean defaultValues = false;
+//        for(A_book b : list){
+//            defaultValues = myDB.insertDefaultBook(b.getCategory(), b.getTitle(), b.getAuthor(), b.getYear(), b.getPages(), b.getBought(), b.getAvailable(), b.getPrice());
+//        }
+//
+//        if (defaultValues = true){
+//            Toast.makeText(Inserting_ebook.this, "Default stored books are added!!!", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(Inserting_ebook.this, "Unfortunately NOT added!!!", Toast.LENGTH_LONG).show();
+//        }
 
 
 
@@ -88,16 +92,23 @@ public class Inserting_ebook extends AppCompatActivity {
                         Category = edit_category.getText().toString();
                         Author = edit_author.getText().toString();
                         Title = edit_title.getText().toString();
-                        Year = Integer.parseInt(edit_year.getText().toString());
-                        Pages = Integer.parseInt(edit_pages.getText().toString());
-                        Price = Integer.parseInt(edit_price.getText().toString());
+                        Year = edit_year.getText().toString();
+                        Pages = edit_pages.getText().toString();
+                        Price = edit_price.getText().toString();
 
-                        boolean isInserted = myDB.insertBook(Category, Title, Author, Year, Pages, Price);
-                        if (isInserted = true){
-                            Toast.makeText(Inserting_ebook.this, "New Book inserted!!!", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(Inserting_ebook.this, "Oops not inserted!!!", Toast.LENGTH_LONG).show();
-                        }
+                        myDB = new DatabaseHelper(context);
+                        sqLiteDatabase = myDB.getReadableDatabase();
+                        myDB.addInformation(Category, Author, Title, Year, Pages, Price, sqLiteDatabase);
+                        Toast.makeText(Inserting_ebook.this, "New Book is inserted!!!", Toast.LENGTH_LONG).show();
+                        myDB.close();
+
+
+//                        boolean isInserted = myDB.insertBook(Category, Title, Author, Year, Pages, Price);
+//                        if (isInserted = true){
+//                            Toast.makeText(Inserting_ebook.this, "New Book inserted!!!", Toast.LENGTH_LONG).show();
+//                        } else {
+//                            Toast.makeText(Inserting_ebook.this, "Oops not inserted!!!", Toast.LENGTH_LONG).show();
+//                        }
                     }
                 }
         );

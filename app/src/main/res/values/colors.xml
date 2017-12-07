@@ -6,4 +6,5 @@
     <color name="background">#5ddfc9</color>
     <color name="color_button">#137e73</color>
     <color name="color_edit_text">#b7cfcd</color>
+    <color name="color_black">#080808</color>
 </resources>

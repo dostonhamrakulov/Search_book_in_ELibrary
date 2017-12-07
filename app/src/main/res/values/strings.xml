@@ -4,4 +4,5 @@
     <string name="title_activity_bookstore">Bookstore</string>
     <string name="welcome">Welcome to online BOOKSTORE</string>
     <string name="title_activity_inserting_ebook">Inserting_ebook</string>
+    <string name="title_activity_view_books">View_books</string>
 </resources>

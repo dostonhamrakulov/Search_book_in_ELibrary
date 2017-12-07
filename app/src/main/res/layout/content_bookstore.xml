@@ -8,6 +8,7 @@
     tools:context="com.e_library.search_book_in_e_library.Bookstore"
     tools:showIn="@layout/activity_bookstore"
     android:orientation="vertical"
+    android:background="@color/background"
     >
     <TextView
         android:layout_width="wrap_content"
@@ -26,5 +27,15 @@
         android:text="Insert ebook"
         android:onClick="Insert_ebook"
         android:textAllCaps="false"
-        android:id="@+id/id_insert_ebook"/>
+        android:id="@+id/id_insert_ebook"
+        android:background="@color/color_button"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="View books"
+        android:onClick="View_all_books"
+        android:textAllCaps="false"
+        android:id="@+id/id_view_all_books"
+        android:background="@color/color_button"/>
 </LinearLayout>

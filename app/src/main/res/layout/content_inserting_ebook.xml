@@ -158,13 +158,6 @@
         android:background="@color/color_button"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/id_btn_insert"
-        android:layout_marginTop="20dp"
-        android:text="Xusan aka"
-        android:textAllCaps="false"
-        android:background="#f90004"/>
+
 
 </RelativeLayout>

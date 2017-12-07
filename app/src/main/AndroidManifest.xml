@@ -31,6 +31,15 @@
         <activity
             android:name=".Inserting_ebook"
             android:label="@string/title_activity_inserting_ebook"
+            android:parentActivityName=".Bookstore"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".View_books"
+            android:label="@string/title_activity_view_books"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".Bookstore">
             <meta-data
